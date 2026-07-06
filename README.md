@@ -80,7 +80,7 @@ Identical keys in both modes, snake_case, JSON-serializable:
 
 ## Why not `langchain-community`'s `ArxivRetriever`?
 
-This package exists because the community implementation has accumulated footguns:
+This package exists because [langchain-community](https://github.com/langchain-ai/langchain-community) has been [deprecated and is no longer maintained](https://github.com/langchain-ai/langchain-community/issues/674), and uses deprecated functions from [arxiv-py](https://github.com/lukasschmidinger/arxiv-py). Lastly, the community implementation has accumulated footguns:
 
 | | `langchain-community` | `langchain-arxiv-retriever` |
 |---|---|---|
