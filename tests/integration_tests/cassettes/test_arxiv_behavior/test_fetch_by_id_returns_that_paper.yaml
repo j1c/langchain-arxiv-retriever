@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - arxiv.py/4.0.0
+    method: GET
+    uri: https://export.arxiv.org/api/query?search_query=&id_list=1706.03762&sortBy=relevance&sortOrder=descending&start=0&max_results=5
+  response:
+    body:
+      string: "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns:opensearch=\"http://a9.com/-/spec/opensearch/1.1/\"
+        xmlns:arxiv=\"http://arxiv.org/schemas/atom\" xmlns=\"http://www.w3.org/2005/Atom\">\n
+        \ <id>https://arxiv.org/api/5tH7kdRKCBW/2fOeonR3LyTvnZk</id>\n  <title>arXiv
+        Query: search_query=&amp;id_list=1706.03762&amp;start=0&amp;max_results=5</title>\n
+        \ <updated>2026-07-06T19:49:12Z</updated>\n  <link href=\"https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=5&amp;id_list=1706.03762\"
+        type=\"application/atom+xml\"/>\n  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>\n
+        \ <opensearch:totalResults>1</opensearch:totalResults>\n  <opensearch:startIndex>0</opensearch:startIndex>\n
+        \ <entry>\n    <id>http://arxiv.org/abs/1706.03762v7</id>\n    <title>Attention
+        Is All You Need</title>\n    <updated>2023-08-02T00:41:18Z</updated>\n    <link
+        href=\"https://arxiv.org/abs/1706.03762v7\" rel=\"alternate\" type=\"text/html\"/>\n
+        \   <link href=\"https://arxiv.org/pdf/1706.03762v7\" rel=\"related\" type=\"application/pdf\"
+        title=\"pdf\"/>\n    <summary>The dominant sequence transduction models are
+        based on complex recurrent or convolutional neural networks in an encoder-decoder
+        configuration. The best performing models also connect the encoder and decoder
+        through an attention mechanism. We propose a new simple network architecture,
+        the Transformer, based solely on attention mechanisms, dispensing with recurrence
+        and convolutions entirely. Experiments on two machine translation tasks show
+        these models to be superior in quality while being more parallelizable and
+        requiring significantly less time to train. Our model achieves 28.4 BLEU on
+        the WMT 2014 English-to-German translation task, improving over the existing
+        best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French
+        translation task, our model establishes a new single-model state-of-the-art
+        BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction
+        of the training costs of the best models from the literature. We show that
+        the Transformer generalizes well to other tasks by applying it successfully
+        to English constituency parsing both with large and limited training data.</summary>\n
+        \   <category term=\"cs.CL\" scheme=\"http://arxiv.org/schemas/atom\"/>\n
+        \   <category term=\"cs.LG\" scheme=\"http://arxiv.org/schemas/atom\"/>\n
+        \   <published>2017-06-12T17:57:34Z</published>\n    <arxiv:comment>15 pages,
+        5 figures</arxiv:comment>\n    <arxiv:primary_category term=\"cs.CL\"/>\n
+        \   <author>\n      <name>Ashish Vaswani</name>\n    </author>\n    <author>\n
+        \     <name>Noam Shazeer</name>\n    </author>\n    <author>\n      <name>Niki
+        Parmar</name>\n    </author>\n    <author>\n      <name>Jakob Uszkoreit</name>\n
+        \   </author>\n    <author>\n      <name>Llion Jones</name>\n    </author>\n
+        \   <author>\n      <name>Aidan N. Gomez</name>\n    </author>\n    <author>\n
+        \     <name>Lukasz Kaiser</name>\n    </author>\n    <author>\n      <name>Illia
+        Polosukhin</name>\n    </author>\n  </entry>\n</feed>\n"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2962'
+      Date:
+      - Mon, 06 Jul 2026 19:49:12 GMT
+      Strict-Transport-Security:
+      - max-age=300
+      X-Cache:
+      - MISS, MISS, MISS
+      X-Cache-Hits:
+      - 0, 0, 0
+      X-Served-By:
+      - cache-lga21993-LGA, cache-lga21993-LGA, cache-lga21973-LGA, cache-nyc-kteb1890054-NYC
+      X-Timer:
+      - S1783367352.198394,VS0,VE137
+      content-type:
+      - application/atom+xml; charset=utf-8
+      server:
+      - Google Frontend
+      via:
+      - 1.1 google, 1.1 varnish, 1.1 varnish, 1.1 varnish
+      x-cloud-trace-context:
+      - 80bed5ae66e6fcb301710875c810746a
+    status:
+      code: 200
+      message: OK
+version: 1
