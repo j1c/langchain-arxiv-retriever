@@ -15,6 +15,8 @@ docs = retriever.invoke('ti:"attention is all you need"')
 
 One `Document` per paper, in arXiv's relevance order. Three knobs, one metadata schema, typed errors, nothing silent.
 
+**Documentation:** <https://j1c.github.io/langchain-arxiv-retriever/>
+
 ## Usage
 
 ### Abstracts (default)
