@@ -1,9 +1,48 @@
 [project]
 name = "langchain-arxiv-retriever"
-version = "0.1.0"
-description = "A Retriever for the Langchain eco system to access the arxiv API "
+version = "1.0.0"
+description = "LangChain retriever for the arXiv"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Jaewon Chung", email = "jaewonc78@gmail.com" }]
 requires-python = ">=3.12"
+keywords = ["langchain", "arxiv", "retriever", "rag", "research"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "arxiv>=4.0.0",
+    "langchain-core>=1.0.0",
+    "pypdf>=5.0.0",
+    "requests>=2.32.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/j1c/langchain-arxiv-retriever"
+Repository = "https://github.com/j1c/langchain-arxiv-retriever"
+Issues = "https://github.com/j1c/langchain-arxiv-retriever/issues"
+
+[dependency-groups]
+dev = [
+    "langchain-tests>=1.1.0",
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_arxiv"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
