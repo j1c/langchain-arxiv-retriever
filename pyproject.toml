@@ -1,0 +1,9 @@
+[project]
+name = "langchain-arxiv-retriever"
+version = "0.1.0"
+description = "A Retriever for the Langchain eco system to access the arxiv API "
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arxiv>=4.0.0",
+]
