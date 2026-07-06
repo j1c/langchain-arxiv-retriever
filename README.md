@@ -15,20 +15,6 @@ docs = retriever.invoke('ti:"attention is all you need"')
 
 One `Document` per paper, in arXiv's relevance order. Three knobs, one metadata schema, typed errors, nothing silent.
 
-## Why not `langchain-community`'s `ArxivRetriever`?
-
-This package exists because the community implementation has accumulated footguns:
-
-| | `langchain-community` | `langchain-arxiv-retriever` |
-|---|---|---|
-| "Full documents" mode | Silently truncated at **4,000 chars** (`doc_content_chars_max` default) — about a page and a half | Whole text by default; truncation only if you opt in, and then it's flagged in metadata |
-| Full-text source | PDF only, parsed with PyMuPDF (**AGPL**) | arXiv's native HTML when it exists (most papers since Dec 2023), `pypdf` (BSD) fallback — permissive licenses only |
-| arXiv field syntax (`ti:`, `cat:`, …) | Strips `:` and `-` from queries in full-text mode, breaking it | Queries pass through verbatim |
-| Query length | Silently cut at 300 chars | Untouched |
-| Metadata | Different keys, casing, and value types per mode | One snake_case schema, both modes |
-| Errors | Returned as a fake `Document` (`"Arxiv exception: …"`) that flows into your prompt | Raised, always, as typed exceptions |
-| API traffic | Fetches 100 results per request regardless of `k`; re-downloads PDFs to disk on every call | Fetches what `k` needs; downloads stay in memory; nothing written to disk |
-
 ## Usage
 
 ### Abstracts (default)
@@ -88,3 +74,18 @@ Identical keys in both modes, snake_case, JSON-serializable:
 | `token_estimate` | `int` | `content_length // 4` |
 | `truncated` | `bool` | `True` only if `max_content_chars` fired |
 | `source_format` | `str` | `"abstract"`, `"html"`, or `"pdf"` |
+
+
+## Why not `langchain-community`'s `ArxivRetriever`?
+
+This package exists because the community implementation has accumulated footguns:
+
+| | `langchain-community` | `langchain-arxiv-retriever` |
+|---|---|---|
+| "Full documents" mode | Silently truncated at **4,000 chars** (`doc_content_chars_max` default) — about a page and a half | Whole text by default; truncation only if you opt in, and then it's flagged in metadata |
+| Full-text source | PDF only, parsed with PyMuPDF (**AGPL**) | arXiv's native HTML when it exists (most papers since Dec 2023), `pypdf` (BSD) fallback — permissive licenses only |
+| arXiv field syntax (`ti:`, `cat:`, …) | Strips `:` and `-` from queries in full-text mode, breaking it | Queries pass through verbatim |
+| Query length | Silently cut at 300 chars | Untouched |
+| Metadata | Different keys, casing, and value types per mode | One snake_case schema, both modes |
+| Errors | Returned as a fake `Document` (`"Arxiv exception: …"`) that flows into your prompt | Raised, always, as typed exceptions |
+| API traffic | Fetches 100 results per request regardless of `k`; re-downloads PDFs to disk on every call | Fetches what `k` needs; downloads stay in memory; nothing written to disk |
