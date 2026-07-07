@@ -6,6 +6,7 @@ repo_name: j1c/langchain-arxiv-retriever
 
 nav:
   - Home: index.md
+  - Example Usage: examples.md
   - API Reference: api.md
 
 theme:
